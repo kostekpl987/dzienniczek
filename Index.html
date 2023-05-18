@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formularz</title>
+	<link rel="stylesheet" href="css.css">
+	<meta charset="UTF-8">
+	<script src="projekt.js" defer></script>
+</head>
+<body>
+
+
+	<nav>
+		<ul>
+			<li id="dziennik">Dzienniczek praktyk</li>
+			<li id="metryczka">Metryczka</li>
+			<li id="pod">Podsumowanie</li>
+			<li><a href="https://kostekpl987.github.io/guess-name/">API</a></li>
+		</ul>
+	</nav>
+
+
+
+
+
+	<form id="wpis">
+		<h1>Nowy wpis</h1>
+		<label for="dzial">Dział:</label>
+		<select id="dzial" name="dzial">
+				<option value="">Dzial</option>
+				<option>Frontend</option>
+				<option>Backend</option>
+				<option>Bazy danych</option>
+				<option>Testy</option>
+		</select>
+		<label for="temat">Temat:</label>
+		<select id="temat" name="temat">
+			<option>Temat</option>
+			<optgroup id="front">
+				<option>Html</option>
+				<option>css</option>
+				<option>scss</option>
+				<option>javascript</option>
+				<option>projektowanie</option>
+			</optgroup>
+			<optgroup id="back">
+				<option>php</option>
+				<option>Nest.js</option>
+				<option>Python</option>
+				<option>Java</option>
+				<option>C#</option>
+			</optgroup>
+			<optgroup id="base">
+				<option>Projektowanie bazy danych</option>
+				<option>Tworzenie baz danych</option>
+				<option>Połączenie z aplikacją</option>
+				<option>zabezpiczenia</option>
+				<option>ORM</option>
+			</optgroup>
+			<optgroup id="test">
+				<option>Rodzaje testów</option>
+				<option>Techniki pisania testów</option>
+				<option>Jest</option>
+				<option>Testowanie aplikacji</option>
+				<option>Cypress</option>
+			</optgroup>
+			
+		</select>
+		<label for="data">Data:</label>
+		<input type="date" id="data" name="data">
+		<label>Opiekun:</label>
+		<span><label for="opiekun1">Juliusz<input type="radio" id="opiekun" name="opiekun" value="Juliusz"></label></span>
+		<span><label for="opiekun2">Korfanty<input type="radio" id="opiekun" name="opiekun" value="Korfanty"></label></span>
+		<span><label for="opiekun3">Abduldig<input type="radio" id="opiekun" name="opiekun" value="Abduldig"></label></span>
+		<label for="sprawozdanie">Sprawozdanie:</label>
+		<textarea id="sprawozdanie" name="sprawozdanie" placeholder="Opis wykonanych działań"></textarea>
+		<label for="godziny">Ilość godzin:</label>
+		<input type="number" id="godziny" name="godziny" min="1" max="8">
+		<label>Zrealizowane<input type="checkbox" name="Zrealizowane" id="zrealizowane"></label>
+		<label for="stopien">Stopień opanowania materiału:</label>
+		<span>1 <input type="range" id="stopien" name="stopien" onchange="grade()" min="1" max="6"> 6</span>
+		<span id="rangeValue">4</span>
+		<input id="new" type="submit" value="Wyślij">
+	</form>
+
+
+
+	<div class="userData" id="cos">
+		<h1>
+			Zrealizowane tematy
+		</h1>
+		<div id="wpis2">
+			
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<div id="userData" class="userData">
+		<span id="imieText">Brak imienia</span>
+		<span id="nazwiskoText">Brak nazwiska</span>
+		<span id="klasaText">Klasa: Brak danych</span>
+		<span id="rokText">rok: Brak danych</span>
+		<span id="gdzieText">Odbytej w: Brak danych</span>
+		<span id="rozpText">Rozpoczęte: Brak danych</span>
+		<span id="zakoText">Zakończone: Brak danych</span>
+		<span id="kraj">Kraj pochodzenia: Brak danych</span>
+		<input type="submit" value="Edytuj" id="edit-User">
+	</div>
+
+
+
+
+
+
+
+
+
+	<div id="userEdit" class="userData">
+		<label>Imie:</label>
+		<input type="text" name="" id="imie">
+		<label>Nazwisko:</label>
+		<input type="text" name="" id="nazwisko">
+		<label>Klasa:</label>
+		<input type="text"  id="klasa">
+		<label>rok:</label>
+		<input type="text" id="rok">
+		<label>Odbytej w:</label>
+		<input type="text"  id="firma">
+		<label>Data rozpoczęcia:</label>
+		<input type="date"  id="rozp">
+		<label>Data zakończenia:</label>
+		<input type="date"  id="zako">
+		<input type="submit" value="Edytuj" id="edit">
+	</div>
+	<div id="podsumowanie" class="userData">
+		<table>
+			<tr><th>nazwa modułu</th><th>Ilość godzin zrealizowanych</th></tr>
+			
+			<tr>	<td id="fTopic">Frontend</td>	<td id="fHours"></td>	</tr>
+			<tr>	<td id="bTopic">Backend</td>	<td id="bHours"></td>	</tr>
+			<tr>	<td id="dTopic">Baza danych</td>	<td id="dHours"></td>	</tr>
+			<tr>	<td id="tTopic">Testy</td>	<td id="tHours"></td>	</tr>
+			<tr><td class="razem">Razem</td><td id="razem"></td></tr>
+		</table>
+		<span id="still">Pozostało do zrealizania: </span>
+		<span id="ocenka">Proponowana ocena: </span>
+	</div>
+
+	<div class="userData">
+		<h1>Metody tablicowe</h1>
+		<h2>Map</h2>
+		<span id="mprzed"></span>
+		<span id="mpo"></span>
+		<h2>Filter</h2>
+		<span id="fprzed"></span>
+		<span id="fpo"></span>
+		<h2>Reduce</h2>
+		<span id="rprzed"></span>
+		<span id="rpo"></span>
+	</div>
+
+
+
+
+
+
+
+</body>
+</html>
