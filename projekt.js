@@ -219,6 +219,7 @@ fetch("https://api.nationalize.io?name="+localStorage.getItem("imie"))
 
 })
 }
+edytuj();
 
 document.querySelector("#new").addEventListener("click", (event)=>{
       event.preventDefault();
