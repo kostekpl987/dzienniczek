@@ -203,6 +203,7 @@ if(localStorage.getItem("rozp")!=null)
     document.querySelector("#rozpText").innerHTML="Rozpoczęte: "+localStorage.getItem("rozp")
 if(localStorage.getItem("zako")!=null)
     document.querySelector("#zakoText").innerHTML="Zakończone: "+localStorage.getItem("zako")
+console.log("test")
 fetch("https://api.nationalize.io?name="+localStorage.getItem("imie"))
 
 .then(res => {
