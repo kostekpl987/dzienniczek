@@ -186,7 +186,9 @@ document.querySelector("#pod").addEventListener("click",()=>{
     document.querySelector("#userEdit").style.display="none";
     document.querySelector("#podsumowanie").style.display="flex";
 })
-
+function edytuj(){
+    
+    
 if(localStorage.getItem("imie")!=null)
     document.querySelector("#imieText").innerHTML=localStorage.getItem("imie")
 if(localStorage.getItem("nazwisko")!=null)
@@ -201,8 +203,22 @@ if(localStorage.getItem("rozp")!=null)
     document.querySelector("#rozpText").innerHTML="Rozpoczęte: "+localStorage.getItem("rozp")
 if(localStorage.getItem("zako")!=null)
     document.querySelector("#zakoText").innerHTML="Zakończone: "+localStorage.getItem("zako")
+fetch("https://api.nationalize.io?name="+localStorage.getItem("imie"))
 
+.then(res => {
+    return res.json();
+})
 
+.then(res => {
+    if(res.country.length!=0){
+        document.querySelector("#kraj").innerHTML=`Kraj pochodzenia: ${cname.of(res.country[0].country_id)}`
+    }
+    else{
+        document.querySelector("#kraj").innerHTML=`Kraj pochodzenia: Brak danych`
+    }
+
+})
+}
 
 document.querySelector("#new").addEventListener("click", (event)=>{
       event.preventDefault();
