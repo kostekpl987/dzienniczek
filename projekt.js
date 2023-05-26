@@ -145,8 +145,11 @@ function resultParameters() {
     document.querySelector("#dHours").innerHTML=baza
     document.querySelector("#tHours").innerHTML=testy
     let r=front+baza+testy+back;
-    srednia=tmp/parseInt(localStorage.getItem("id"))
-  
+    
+    if(!isNaN)
+        srednia=tmp/parseInt(localStorage.getItem("id"))
+    else
+        srednia="1";
     document.querySelector("#razem").innerHTML=r;
     document.querySelector("#still").innerHTML=`Pozostało: ${140-r} godz.`;
     document.querySelector("#ocenka").innerHTML="Proponowana ocena: "+srednia;
@@ -267,6 +270,6 @@ let mapa= [1,2,3,4,5];
 document.querySelector("#mprzed").innerHTML="Przed: "+mapa;
 document.querySelector("#fprzed").innerHTML="Przed: "+mapa;
 document.querySelector("#rprzed").innerHTML="Przed: "+mapa;
-document.querySelector("#mpo").innerHTML="Po: "+mapa.map(el => el * 2);
-document.querySelector("#fpo").innerHTML="Po: "+mapa.filter(el>3);
-document.querySelector("#rpo").innerHTML="Po: "+mapa.reduce((prev, next) => `${prev}${next}`);
+document.querySelector("#mpo").innerHTML="Po: "+mapa.map((num) => num * 2);
+document.querySelector("#fpo").innerHTML="Po: "+mapa.filter((num) => num % 2 === 0);
+document.querySelector("#rpo").innerHTML="Po: "+mapa.reduce((acc, num) => acc + num, 0);
