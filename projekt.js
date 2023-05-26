@@ -1,6 +1,12 @@
 const cname = new Intl.DisplayNames(['PL'], { type: 'region' });
-
-
+const temat=document.querySelector("#temat")
+const dzial=document.querySelector("#dzial")
+const data=document.querySelector("#data")
+const opiekun=document.querySelector("#opiekun")
+const sprawo=document.querySelector("#sprawozdanie")
+const stopien=document.querySelector("#stopien")
+const zrealizowane=document.querySelector("#zrealizowane")
+const godz=document.querySelector("#godziny")
 
 
 
@@ -8,14 +14,14 @@ document.querySelector("#new").addEventListener("click", ()=>{
     if (localStorage.getItem("id") === null) {
         localStorage.setItem("id",1)
         let tmp ={
-    temat:document.querySelector("#temat").value,
-    dzial:document.querySelector("#dzial").value,
-    data:document.querySelector("#data").value,
-    opiekun:document.querySelector("#opiekun").value,
-    sprawozdanie:document.querySelector("#sprawozdanie").value,
-    godziny:document.querySelector("#godziny").value,
-    step:document.querySelector("#stopien").value,
-    zrealizowane:document.querySelector("#zrealizowane").value,
+    temat:temat.value,
+    dzial:dzial.value,
+    data:data.value,
+    opiekun:opiekun.value,
+    sprawozdanie:sprawo.value,
+    godziny:godz.value,
+    step:stopien.value,
+    zrealizowane:zrealizowane.value,
 } 
     
     localStorage.setItem(1,JSON.stringify(tmp));
@@ -24,13 +30,14 @@ document.querySelector("#new").addEventListener("click", ()=>{
     else{
         let tmpint=parseInt(localStorage.getItem("id"))+1;
         let tmp ={
-    temat:document.querySelector("#temat").value,
-    dzial:document.querySelector("#dzial").value,
-    data:document.querySelector("#data").value,
-    opiekun:document.querySelector("#opiekun").value,
-    sprawozdanie:document.querySelector("#sprawozdanie").value,
-    godziny:document.querySelector("#godziny").value,
-    step:document.querySelector("#stopien").value,
+    temat:temat.value,
+    dzial:dzial.value,
+    data:data.value,
+    opiekun:opiekun.value,
+    sprawozdanie:sprawo.value,
+    godziny:godz.value,
+    step:stopien.value,
+    zrealizowane:zrealizowane.value,
 } 
     
     localStorage.setItem(tmpint,JSON.stringify(tmp) );
