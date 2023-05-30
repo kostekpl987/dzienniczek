@@ -66,7 +66,7 @@ function grade(){
     let ocena=document.querySelector("#stopien").value;
     document.querySelector("#rangeValue").innerHTML=document.querySelector("#stopien").value;
 }
-const dzial=document.querySelector("#dzial");
+
 dzial.addEventListener("change",()=>{
     let front = document.querySelector("#front");
     let back = document.querySelector("#back");
